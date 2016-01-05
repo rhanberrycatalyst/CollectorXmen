@@ -1,0 +1,25 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "collectible",
+            "otherEntityName": "collectible",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "forsale"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "forsale",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160105024932",
+    "dto": "no",
+    "service": "serviceImpl",
+    "pagination": "no"
+}

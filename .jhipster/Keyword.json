@@ -1,0 +1,46 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "keyword1",
+            "otherEntityName": "collectible",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "keyword1"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "keyword2",
+            "otherEntityName": "collectible",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "keyword2"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "keyword3",
+            "otherEntityName": "collectible",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "keyword3"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "keyword",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "50"
+        }
+    ],
+    "changelogDate": "20160105024842",
+    "dto": "no",
+    "service": "serviceImpl",
+    "pagination": "no"
+}

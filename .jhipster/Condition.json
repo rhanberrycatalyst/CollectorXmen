@@ -1,0 +1,29 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "collectible",
+            "otherEntityName": "collectible",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "condition"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "condition",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "1",
+            "fieldValidateRulesMaxlength": "50"
+        }
+    ],
+    "changelogDate": "20160105024016",
+    "dto": "no",
+    "service": "serviceImpl",
+    "pagination": "no"
+}

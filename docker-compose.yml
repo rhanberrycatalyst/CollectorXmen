@@ -1,0 +1,10 @@
+collectorthrd-dev-postgresql:
+  container_name: collectorthrd-dev-postgresql
+  image: postgres:9.4.5
+  # volumes:
+  #   - ~/volumes/jhipster/collectorthrd/dev-postgresql/:/var/lib/postgresql/
+  environment:
+    - POSTGRES_USER=collectorthrd
+    - POSTGRES_PASSWORD=
+  ports:
+    - "5432:5432"

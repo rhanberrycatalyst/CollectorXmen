@@ -1,0 +1,18 @@
+collectorthrd-elasticsearch:
+  container_name: collectorthrd-elasticsearch
+  image: elasticsearch:1.7.3
+  # volumes:
+  #   - ~/volumes/jhipster/collectorthrd/elasticsearch/:/usr/share/elasticsearch/data/
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+collectorthrd-postgresql:
+  container_name: collectorthrd-postgresql
+  image: postgres:9.4.5
+  # volumes:
+  #   - ~/volumes/jhipster/collectorthrd/postgresql/:/var/lib/postgresql/
+  environment:
+    - POSTGRES_USER=collectorthrd
+    - POSTGRES_PASSWORD=
+  ports:
+    - "5432:5432"

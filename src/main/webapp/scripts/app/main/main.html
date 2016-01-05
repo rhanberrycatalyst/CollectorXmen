@@ -1,0 +1,37 @@
+<div ng-cloak>
+    <div class="row">
+
+        <div class="col-md-8">
+            <h1>WELCOME TO YOUR COLLECTION APP!</h1>
+            <p class="lead">This is your homepage. If you have not done so, please login</p>
+
+            <div ng-switch="isAuthenticated()">
+                <div class="alert alert-success" ng-switch-when="true">
+                    You are logged in as user "{{account.login}}".
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    If you want to <a class="alert-link" href="#/login">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
+                </div>
+
+                <div class="alert alert-warning" ng-switch-when="false">
+                    You don't have an account yet? <a class="alert-link" href="#/register">Register a new account</a>
+                </div>
+            </div>
+
+            <p>
+                If you have any question on How to use this app:
+            </p>
+
+            <ul>
+                <li><a href="mailto:rhanberry@catalystedevworks.com?Subject=Collector" target="_blank">Rick's Email</a></li>
+                <li><a href="mailto:ldahlberg@catalystedevworks.com?Subject=Collector" target="_blank">Luke's Email</a></li>
+                <li><a href="mailto:wperlichek@catalystedevworks.com?Subject=Collector" target="_blank">Will's email</a></li>
+                <li><a href="mailto:blarsen@catalystedevworks.com?Subject=Collector" target="_blank">Brad's email</a></li>
+                <li><a href="http://catalystdevworks.com" target="_blank" >CatalystDevWorks 2016</a></li>
+            </ul>
+
+
+        </div>
+    </div>
+</div>
