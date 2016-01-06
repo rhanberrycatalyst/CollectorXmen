@@ -1,8 +1,8 @@
 package com.collectorthrd.service;
 
-import com.collectorthrd.domain.Keyword;
-
 import java.util.List;
+
+import com.collectorthrd.domain.Keyword;
 
 /**
  * Service Interface for managing Keyword.

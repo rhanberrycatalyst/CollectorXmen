@@ -1,8 +1,8 @@
 package com.collectorthrd.service;
 
-import com.collectorthrd.domain.Forsale;
-
 import java.util.List;
+
+import com.collectorthrd.domain.Forsale;
 
 /**
  * Service Interface for managing Forsale.

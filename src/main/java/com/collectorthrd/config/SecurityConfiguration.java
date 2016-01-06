@@ -1,7 +1,7 @@
 package com.collectorthrd.config;
 
-import com.collectorthrd.security.*;
-import com.collectorthrd.web.filter.CsrfCookieGeneratorFilter;
+import javax.inject.Inject;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -12,14 +12,19 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.data.repository.query.SecurityEvaluationContextExtension;
-
 import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.security.web.csrf.CsrfFilter;
 
-import javax.inject.Inject;
+import com.collectorthrd.security.AjaxAuthenticationFailureHandler;
+import com.collectorthrd.security.AjaxAuthenticationSuccessHandler;
+import com.collectorthrd.security.AjaxLogoutSuccessHandler;
+import com.collectorthrd.security.AuthoritiesConstants;
+import com.collectorthrd.security.CustomAccessDeniedHandler;
+import com.collectorthrd.security.Http401UnauthorizedEntryPoint;
+import com.collectorthrd.web.filter.CsrfCookieGeneratorFilter;
 
 @Configuration
 @EnableWebSecurity

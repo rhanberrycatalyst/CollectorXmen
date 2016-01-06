@@ -1,7 +1,22 @@
 package com.collectorthrd.service;
 
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
+import javax.inject.Inject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.collectorthrd.domain.Authority;
-import com.collectorthrd.domain.PersistentToken;
 import com.collectorthrd.domain.User;
 import com.collectorthrd.repository.AuthorityRepository;
 import com.collectorthrd.repository.PersistentTokenRepository;
@@ -10,18 +25,6 @@ import com.collectorthrd.repository.search.UserSearchRepository;
 import com.collectorthrd.security.SecurityUtils;
 import com.collectorthrd.service.util.RandomUtil;
 import com.collectorthrd.web.rest.dto.ManagedUserDTO;
-import java.time.ZonedDateTime;
-import java.time.LocalDate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.time.ZonedDateTime;
-import javax.inject.Inject;
-import java.util.*;
 
 /**
  * Service class for managing users.

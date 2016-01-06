@@ -1,21 +1,22 @@
 package com.collectorthrd.service.impl;
 
-import com.collectorthrd.service.CategoryService;
-import com.collectorthrd.domain.Category;
-import com.collectorthrd.repository.CategoryRepository;
-import com.collectorthrd.repository.search.CategorySearchRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.stereotype.Service;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 
-import javax.inject.Inject;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import javax.inject.Inject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.collectorthrd.domain.Category;
+import com.collectorthrd.repository.CategoryRepository;
+import com.collectorthrd.repository.search.CategorySearchRepository;
+import com.collectorthrd.service.CategoryService;
 
 /**
  * Service Implementation for managing Category.

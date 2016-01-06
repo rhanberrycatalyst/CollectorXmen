@@ -1,8 +1,8 @@
 package com.collectorthrd.service;
 
-import com.collectorthrd.domain.Color;
-
 import java.util.List;
+
+import com.collectorthrd.domain.Color;
 
 /**
  * Service Interface for managing Color.

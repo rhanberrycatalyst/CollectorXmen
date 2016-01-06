@@ -1,8 +1,8 @@
 package com.collectorthrd.service;
 
-import com.collectorthrd.domain.Category;
-
 import java.util.List;
+
+import com.collectorthrd.domain.Category;
 
 /**
  * Service Interface for managing Category.

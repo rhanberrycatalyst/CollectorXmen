@@ -1,13 +1,12 @@
 package com.collectorthrd.repository;
 
-import com.collectorthrd.domain.User;
-
 import java.time.ZonedDateTime;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.collectorthrd.domain.User;
 
 /**
  * Spring Data JPA repository for the User entity.

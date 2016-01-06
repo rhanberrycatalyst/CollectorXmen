@@ -1,8 +1,8 @@
 package com.collectorthrd.service;
 
-import com.collectorthrd.domain.Collectible;
-
 import java.util.List;
+
+import com.collectorthrd.domain.Collectible;
 
 /**
  * Service Interface for managing Collectible.

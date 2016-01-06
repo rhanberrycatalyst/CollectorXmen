@@ -1,8 +1,8 @@
 package com.collectorthrd.service;
 
-import com.collectorthrd.domain.Condition;
-
 import java.util.List;
+
+import com.collectorthrd.domain.Condition;
 
 /**
  * Service Interface for managing Condition.

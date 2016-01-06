@@ -1,12 +1,10 @@
 package com.collectorthrd.config;
 
-import com.collectorthrd.config.liquibase.AsyncSpringLiquibase;
+import java.util.Arrays;
 
-import com.codahale.metrics.MetricRegistry;
-import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
-import liquibase.integration.spring.SpringLiquibase;
+import javax.inject.Inject;
+import javax.sql.DataSource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,16 +14,19 @@ import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.context.ApplicationContextException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.inject.Inject;
-import javax.sql.DataSource;
-import java.util.Arrays;
+import com.codahale.metrics.MetricRegistry;
+import com.collectorthrd.config.liquibase.AsyncSpringLiquibase;
+import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+
+import liquibase.integration.spring.SpringLiquibase;
 
 @Configuration
 @EnableJpaRepositories("com.collectorthrd.repository")

@@ -1,21 +1,22 @@
 package com.collectorthrd.service.impl;
 
-import com.collectorthrd.service.KeywordService;
-import com.collectorthrd.domain.Keyword;
-import com.collectorthrd.repository.KeywordRepository;
-import com.collectorthrd.repository.search.KeywordSearchRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.stereotype.Service;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 
-import javax.inject.Inject;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import javax.inject.Inject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.collectorthrd.domain.Keyword;
+import com.collectorthrd.repository.KeywordRepository;
+import com.collectorthrd.repository.search.KeywordSearchRepository;
+import com.collectorthrd.service.KeywordService;
 
 /**
  * Service Implementation for managing Keyword.

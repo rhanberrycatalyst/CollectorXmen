@@ -1,18 +1,18 @@
 package com.collectorthrd.web.rest;
 
-import com.codahale.metrics.annotation.Timed;
-import com.collectorthrd.domain.Authority;
-import com.collectorthrd.domain.User;
-import com.collectorthrd.repository.AuthorityRepository;
-import com.collectorthrd.repository.UserRepository;
-import com.collectorthrd.repository.search.UserSearchRepository;
-import com.collectorthrd.security.AuthoritiesConstants;
-import com.collectorthrd.service.MailService;
-import com.collectorthrd.service.UserService;
-import com.collectorthrd.web.rest.dto.ManagedUserDTO;
-import com.collectorthrd.web.rest.dto.UserDTO;
-import com.collectorthrd.web.rest.util.HeaderUtil;
-import com.collectorthrd.web.rest.util.PaginationUtil;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
+import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -23,17 +23,24 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.inject.Inject;
-import java.net.URI;
-import java.net.URISyntaxException;
-import javax.servlet.http.HttpServletRequest;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import com.codahale.metrics.annotation.Timed;
+import com.collectorthrd.domain.Authority;
+import com.collectorthrd.domain.User;
+import com.collectorthrd.repository.AuthorityRepository;
+import com.collectorthrd.repository.UserRepository;
+import com.collectorthrd.repository.search.UserSearchRepository;
+import com.collectorthrd.security.AuthoritiesConstants;
+import com.collectorthrd.service.MailService;
+import com.collectorthrd.service.UserService;
+import com.collectorthrd.web.rest.dto.ManagedUserDTO;
+import com.collectorthrd.web.rest.util.HeaderUtil;
+import com.collectorthrd.web.rest.util.PaginationUtil;
 
 /**
  * REST controller for managing users.

@@ -1,8 +1,8 @@
 package com.collectorthrd.repository;
 
-import com.collectorthrd.domain.Authority;
-
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.collectorthrd.domain.Authority;
 
 /**
  * Spring Data JPA repository for the Authority entity.

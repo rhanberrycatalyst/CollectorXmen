@@ -1,9 +1,9 @@
 package com.collectorthrd.security;
 
-import com.collectorthrd.config.Constants;
-
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
+
+import com.collectorthrd.config.Constants;
 
 /**
  * Implementation of AuditorAware based on Spring Security.

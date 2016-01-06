@@ -1,10 +1,8 @@
 package com.collectorthrd.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+
 import com.collectorthrd.domain.Forsale;
-
-import org.springframework.data.jpa.repository.*;
-
-import java.util.List;
 
 /**
  * Spring Data JPA repository for the Forsale entity.
