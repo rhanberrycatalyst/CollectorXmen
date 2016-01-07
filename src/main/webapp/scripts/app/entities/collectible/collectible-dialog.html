@@ -8,11 +8,7 @@
     </div>
     <div class="modal-body">
         <jh-alert-error></jh-alert-error>
-        <div class="form-group">
-            <label for="id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="collectible.id" readonly />
-        </div>
+        
         <div class="form-group">
             <label class="control-label" for="field_name">Name</label>
             <input type="text" class="form-control" name="name" id="field_name"
@@ -74,7 +70,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="field_cataloguenumber">Cataloguenumber</label>
+            <label class="control-label" for="field_cataloguenumber">Catalogue Number</label>
             <input type="text" class="form-control" name="cataloguenumber" id="field_cataloguenumber"
                     ng-model="collectible.cataloguenumber"
                     required ng-maxlength="16" ng-pattern="/[A-Z]{3}-[0-9]{12}$/" />
@@ -95,35 +91,35 @@
         </div>
 
         <div class="form-group">
-            <label for="field_category">category</label>
+            <label for="field_category">Category</label>
             <select class="form-control" id="field_category" name="category" ng-model="collectible.category" ng-options="category as category.category for category in categorys track by category.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
-            <label for="field_condition">condition</label>
+            <label for="field_condition">Condition</label>
             <select class="form-control" id="field_condition" name="condition" ng-model="collectible.condition" ng-options="condition as condition.condition for condition in conditions track by condition.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
-            <label for="field_color">color</label>
+            <label for="field_color">Color</label>
             <select class="form-control" id="field_color" multiple name="color" ng-model="collectible.colors" ng-options="color as color.color for color in colors track by color.id"></select>
         </div>
         <div class="form-group">
-            <label for="field_keyword1">keyword1</label>
+            <label for="field_keyword1">Keyword 1</label>
             <select class="form-control" id="field_keyword1" multiple name="keyword1" ng-model="collectible.keyword1s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
         </div>
         <div class="form-group">
-            <label for="field_keyword2">keyword2</label>
+            <label for="field_keyword2">Keyword 2</label>
             <select class="form-control" id="field_keyword2" multiple name="keyword2" ng-model="collectible.keyword2s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
         </div>
         <div class="form-group">
-            <label for="field_keyword3">keyword3</label>
+            <label for="field_keyword3">Keyword 3</label>
             <select class="form-control" id="field_keyword3" multiple name="keyword3" ng-model="collectible.keyword3s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
         </div>
         <div class="form-group">
-            <label for="field_forsale">forsale</label>
+            <label for="field_forsale">For Sale?</label>
             <select class="form-control" id="field_forsale" name="forsale" ng-model="collectible.forsale" ng-options="forsale as forsale.forsale for forsale in forsales track by forsale.id">
                 <option value=""></option>
             </select>
