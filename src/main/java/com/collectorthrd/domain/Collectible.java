@@ -55,7 +55,7 @@ public class Collectible implements Serializable {
     @NotNull
     @Size(max = 16)
     @Pattern(regexp = "[A-Z]{3}-[0-9]{12}$")
-    @Column(name = "cataloguenumber", length = 16, nullable = false)
+    @Column(name = "cataloguenumber", length = 16, nullable = false, unique = true)
     private String cataloguenumber;
 
     @ManyToOne
