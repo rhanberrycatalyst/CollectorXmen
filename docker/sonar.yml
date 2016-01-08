@@ -2,5 +2,5 @@ collectorthrd-sonar:
   container_name: collectorthrd-sonar
   image: sonarqube:4.5.6
   ports:
-    - "9000:9000"
-    - "9092:9092"
+    - "docs:9000"
+    - "docs:9092"
