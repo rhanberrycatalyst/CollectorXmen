@@ -40,7 +40,7 @@ import com.collectorthrd.service.MailService;
 import com.collectorthrd.service.UserService;
 import com.collectorthrd.web.rest.dto.ManagedUserDTO;
 import com.collectorthrd.web.rest.util.HeaderUtil;
-//import com.collectorthrd.web.rest.util.PaginationUtil;
+import com.collectorthrd.web.rest.util.PaginationUtil;
 
 /**
  * REST controller for managing users.
@@ -182,8 +182,8 @@ public class UserResource {
         List<ManagedUserDTO> managedUserDTOs = page.getContent().stream()
             .map(user -> new ManagedUserDTO(user))
             .collect(Collectors.toList());
-        //HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/users");
-        return new ResponseEntity<>(managedUserDTOs,  HttpStatus.OK);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/users");
+        return new ResponseEntity<>(managedUserDTOs, headers, HttpStatus.OK);
     }
 
     /**
