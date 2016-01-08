@@ -67,6 +67,35 @@ angular.module('collectorthrdApp')
                     })
                 }]
             })
+            .state('collectible.search', {
+                parent: 'collectible',
+                url: '/search',
+                data: {
+                    authorities: ['ROLE_USER'],
+                },
+                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                    $uibModal.open({
+                        templateUrl: 'scripts/app/entities/collectible/collectible-search.html',
+                        controller: 'CollectibleDialogController',
+                        size: 'lg',
+                        resolve: {
+                            entity: function () {
+                                return {
+                                    name: null,
+                                    description: null,
+                                    age: null,
+                                    cataloguenumber: null,
+                                    id: null
+                                };
+                            }
+                        }
+                    }).result.then(function(result) {
+                        $state.go('collectible', null, { reload: true });
+                    }, function() {
+                        $state.go('collectible');
+                    })
+                }]
+            })
             .state('collectible.edit', {
                 parent: 'collectible',
                 url: '/{id}/edit',
