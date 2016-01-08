@@ -49,8 +49,8 @@ public class CollectibleResourceIntTest {
 
     private static final Double DEFAULT_AGE = 0D;
     private static final Double UPDATED_AGE = 1D;
-    private static final String DEFAULT_CATALOGUENUMBER = "AAAAA";
-    private static final String UPDATED_CATALOGUENUMBER = "BBBBB";
+    private static final String DEFAULT_CATALOGUENUMBER = "XXX-111111111111";
+    private static final String UPDATED_CATALOGUENUMBER = "YYY-222222222222";
 
     @Inject
     private CollectibleRepository collectibleRepository;
