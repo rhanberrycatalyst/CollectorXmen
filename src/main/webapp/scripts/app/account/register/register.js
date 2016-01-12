@@ -17,7 +17,6 @@ angular.module('collectorthrdApp')
                     }
                 },
                 resolve: {
-                    
                 }
             });
     });

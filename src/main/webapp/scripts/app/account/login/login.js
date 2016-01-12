@@ -7,7 +7,7 @@ angular.module('collectorthrdApp')
                 parent: 'account',
                 url: '/login',
                 data: {
-                    authorities: [], 
+                    authorities: [],
                     pageTitle: 'Sign in'
                 },
                 views: {
@@ -16,8 +16,6 @@ angular.module('collectorthrdApp')
                         controller: 'LoginController'
                     }
                 },
-                resolve: {
-                    
                 }
             });
     });

@@ -15,8 +15,7 @@ angular.module('collectorthrdApp')
                         controller: 'ResetFinishController'
                     }
                 },
-                resolve: {
-                    
+                resolve: {  
                 }
             });
     });

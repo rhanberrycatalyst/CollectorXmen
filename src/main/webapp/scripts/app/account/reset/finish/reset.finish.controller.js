@@ -18,7 +18,6 @@ angular.module('collectorthrdApp')
                 }).catch(function (response) {
                     $scope.success = null;
                     $scope.error = 'ERROR';
-
                 });
             }
 

@@ -4,9 +4,7 @@ angular.module('collectorthrdApp', ['LocalStorageModule',
     'ngResource', 'ngCookies', 'ngAria', 'ngCacheBuster', 'ngFileUpload',
     // jhipster-needle-angularjs-add-module JHipster will add new module
     'ui.bootstrap', 'ui.router',  'infinite-scroll', 'angular-loading-bar'])
-
-    .run(function ($rootScope, $location, $window, $http, $state,  Auth, Principal, ENV, VERSION) {
-        
+    .run(function ($rootScope, $location, $window, $http, $state,  Auth, Principal, ENV, VERSION) {      
         $rootScope.ENV = ENV;
         $rootScope.VERSION = VERSION;
         $rootScope.$on('$stateChangeStart', function (event, toState, toStateParams) {
@@ -16,7 +14,6 @@ angular.module('collectorthrdApp', ['LocalStorageModule',
             if (Principal.isIdentityResolved()) {
                 Auth.authorize();
             }
-            
         });
 
         $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
@@ -26,7 +23,7 @@ angular.module('collectorthrdApp', ['LocalStorageModule',
             // reset the state memory after logout. If we're redirected to login, our
             // previousState is already set in the authExpiredInterceptor. If we're going
             // to login directly, we don't want to be sent to some previous state anyway
-            if (toState.name != 'login' && $rootScope.previousStateName) {
+            if (toState.name !== 'login' && $rootScope.previousStateName) {
               $rootScope.previousStateName = fromState.name;
               $rootScope.previousStateParams = fromParams;
             }
@@ -37,7 +34,6 @@ angular.module('collectorthrdApp', ['LocalStorageModule',
             }
             $window.document.title = titleKey;
         });
-        
         $rootScope.back = function() {
             // If previous state is 'activate' or do not exist go to 'home'
             if ($rootScope.previousStateName === 'activate' || $state.get($rootScope.previousStateName) === null) {
@@ -78,14 +74,13 @@ angular.module('collectorthrdApp', ['LocalStorageModule',
 
         $httpProvider.interceptors.push('errorHandlerInterceptor');
         $httpProvider.interceptors.push('authExpiredInterceptor');
-        $httpProvider.interceptors.push('notificationInterceptor');
-        
+        $httpProvider.interceptors.push('notificationInterceptor');  
     })
     // jhipster-needle-angularjs-add-config JHipster will add new application configuration
     .config(['$urlMatcherFactoryProvider', function($urlMatcherFactory) {
         $urlMatcherFactory.type('boolean', {
             name : 'boolean',
-            decode: function(val) { return val == true ? true : val == "true" ? true : false },
+            decode: function(val) { return val === true ? true : val === "true" ? true : false },
             encode: function(val) { return val ? 1 : 0; },
             equals: function(a, b) { return this.is(a) && a === b; },
             is: function(val) { return [true,false,0,1].indexOf(val) >= 0 },
