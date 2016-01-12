@@ -169,8 +169,8 @@ module.exports = function(grunt) {
         options: {
           urls: '<%= env.coverage.urls %>',
           log: true
-        },
-      },
+        }
+      }
     },
     // `mocha` runs browser tests, `mochaTest` runs node tests
     mochaTest: {

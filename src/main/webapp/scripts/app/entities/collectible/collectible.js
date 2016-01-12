@@ -42,13 +42,23 @@ angular.module('collectorthrdApp')
                 parent: 'collectible',
                 url: '/new',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_USER']
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({
                         templateUrl: 'scripts/app/entities/collectible/collectible-dialog.html',
                         controller: 'CollectibleDialogController',
                         size: 'lg',
+                        checkUniqueValue: function(id, property, value) {
+	                        var data = {
+	                          id: id,
+	                          property: property,
+	                          value: value
+	                        };
+	                        return $http.post("/api/auth/signup/isuniquevalue", data).then( function(res) {
+	                          return res.data.isUnique;
+	                        });
+                      },
                         resolve: {
                             entity: function () {
                                 return {
@@ -71,7 +81,7 @@ angular.module('collectorthrdApp')
                 parent: 'collectible',
                 url: '/search',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_USER']
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({
@@ -100,7 +110,7 @@ angular.module('collectorthrdApp')
                 parent: 'collectible',
                 url: '/{id}/edit',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_USER']
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({
@@ -123,7 +133,7 @@ angular.module('collectorthrdApp')
                 parent: 'collectible',
                 url: '/{id}/delete',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_USER']
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({

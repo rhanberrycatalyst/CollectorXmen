@@ -38,4 +38,5 @@ angular.module('collectorthrdApp').controller('CollectibleDialogController',
         $scope.clear = function() {
             $uibModalInstance.dismiss('cancel');
         };
+        
 }]);

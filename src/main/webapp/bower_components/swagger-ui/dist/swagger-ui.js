@@ -3670,7 +3670,7 @@ SwaggerSpecConverter.prototype.finish = function (callback, obj) {
 
 var _ = {
   isPlainObject: require('lodash-compat/lang/isPlainObject'),
-  isString: require('lodash-compat/lang/isString'),
+  isString: require('lodash-compat/lang/isString')
 };
 
 var SchemaMarkup = require('../schema-markup.js');
@@ -31282,7 +31282,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
     'click .response_hider'   : 'hideResponse',
     'click .toggleOperation'  : 'toggleOperationContent',
     'mouseenter .api-ic'      : 'mouseEnter',
-    'dblclick .curl'          : 'selectText',
+    'dblclick .curl'          : 'selectText'
   },
 
   initialize: function(opts) {
@@ -32268,7 +32268,7 @@ SwaggerUi.Views.StatusCodeView = Backbone.View.extend({
       var responseModel = {
         sampleJSON: JSON.stringify(this.router.api.models[this.model.responseModel].createJSONSample(), null, 2),
         isParam: false,
-        signature: this.router.api.models[this.model.responseModel].getMockSignature(),
+        signature: this.router.api.models[this.model.responseModel].getMockSignature()
       };
 
       var responseModelView = new SwaggerUi.Views.SignatureView({model: responseModel, tagName: 'div'});

@@ -73,6 +73,7 @@
             <label class="control-label" for="field_cataloguenumber">Catalogue Number</label>
             <input type="text" class="form-control" name="cataloguenumber" id="field_cataloguenumber"
                     ng-model="collectible.cataloguenumber"
+                    ng-unique="{key:??', property: 'cataloguenumber'}"
                     required ng-maxlength="16" ng-pattern="/[A-Z]{3}-[0-9]{12}$/" />
             <div ng-show="editForm.cataloguenumber.$invalid">
                 <p class="help-block"
@@ -85,7 +86,11 @@
                 </p>
                 <p class="help-block"
                     ng-show="editForm.cataloguenumber.$error.pattern" translate-value-pattern="[A-Z]{3}-[0-9]{12}$">
-                    This field should follow pattern "XXX-012345678901".
+                    This field should follow pattern "ABC-012345678901".
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.cataloguenumber.$error.unique">
+                    This field should be unique.
                 </p>
             </div>
         </div>

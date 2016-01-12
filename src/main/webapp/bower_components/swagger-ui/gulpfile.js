@@ -44,7 +44,7 @@ function templates() {
     .pipe(wrap('Handlebars.template(<%= contents %>)'))
     .pipe(declare({
       namespace: 'Handlebars.templates',
-      noRedeclare: true, // Avoid duplicate declarations
+      noRedeclare: true // Avoid duplicate declarations
     }))
     .on('error', log);
 }
