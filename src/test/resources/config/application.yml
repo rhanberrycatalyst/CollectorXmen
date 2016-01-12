@@ -72,11 +72,4 @@ jhipster:
             key: 562b457134ff6256c342b544738e43cafac7862e
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
-    swagger:
-        title: collectorthrd API
-        description: collectorthrd API documentation
-        version: 0.0.1
-        termsOfServiceUrl:
-        contact:
-        license:
-        licenseUrl:
+    

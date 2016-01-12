@@ -145,17 +145,7 @@
             <scope>test</scope>
             <!-- parent POM declares this dependency in default (compile) scope -->
         </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${springfox.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.mapstruct</groupId>
-                    <artifactId>mapstruct</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+        
         <dependency>
             <groupId>com.mattbertolini</groupId>
             <artifactId>liquibase-slf4j</artifactId>
