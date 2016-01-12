@@ -16,8 +16,7 @@ angular.module('collectorthrdApp')
                         controller: 'ActivationController'
                     }
                 },
-                resolve: {
-                    
+                resolve: {  
                 }
             });
     });

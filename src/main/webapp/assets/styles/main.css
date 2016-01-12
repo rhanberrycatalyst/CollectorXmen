@@ -8,11 +8,11 @@ body {
 Hide ng-cloak on page load, https://docs.angularjs.org/api/ng/directive/ngCloak
 ========================================================================== */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none !important;
+    display: none
 }
 
 /* ==========================================================================
-Developement Ribbon
+Development Ribbon
 ========================================================================== */
 .development {
     position: absolute;
@@ -32,17 +32,17 @@ Version number in navbar
 ========================================================================== */
 .navbar-version {
     font-size: 10px;
-    color: #ccc
+    color: #ccc;
 }
 
 /* ==========================================================================
 Browser Upgrade Prompt
 ========================================================================== */
 .browserupgrade {
-    margin: 0.2em 0;
+    margin: .2em 0;
     background: #ccc;
     color: #000;
-    padding: 0.2em 0;
+    padding: .2em 0;
 }
 
 .hero-unit {
@@ -160,16 +160,36 @@ Custom alerts for notification
 
 /* end of Custom alerts for notification */
 
-.voffset  { margin-top: 2px; }
-.voffset1 { margin-top: 5px; }
-.voffset2 { margin-top: 10px; }
-.voffset3 { margin-top: 15px; }
-.voffset4 { margin-top: 30px; }
-.voffset5 { margin-top: 40px; }
-.voffset6 { margin-top: 60px; }
-.voffset7 { margin-top: 80px; }
-.voffset8 { margin-top: 100px; }
-.voffset9 { margin-top: 150px; }
+.voffset  { 
+	margin-top: 2px; 
+}
+.voffset1 { 
+	margin-top: 5px; 
+}
+.voffset2 { 
+	margin-top: 10px; 
+}
+.voffset3 { 
+	margin-top: 15px; 
+}
+.voffset4 { 
+	margin-top: 30px; 
+}
+.voffset5 { 
+	margin-top: 40px; 
+}
+.voffset6 { 
+	margin-top: 60px; 
+}
+.voffset7 { 
+	margin-top: 80px; 
+}
+.voffset8 { 
+	margin-top: 100px; 
+}
+.voffset9 { 
+	margin-top: 150px; 
+}
 
 /* start Password strength bar style */
 ul#strengthBar {
@@ -182,15 +202,15 @@ ul#strengthBar {
 }
 
 .point:last {
-    margin:0 !important;
+    margin: 0;
 }
 .point {
-    background:#DDD;
-    border-radius:2px;
-    display:inline-block;
-    height:5px;
-    margin-right:1px;
-    width:20px;
+    background: #DDD;
+    border-radius: 2px;
+    display: inline-block;
+    height: 5px;
+    margin-right: 1px;
+    width: 20px;
 }
 /* end Password strength bar style */
 
