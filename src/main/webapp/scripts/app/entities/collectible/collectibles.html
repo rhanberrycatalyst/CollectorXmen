@@ -1,4 +1,42 @@
-<div>
+<style>
+	#table-container{
+		margin: 0;
+		padding: 0;
+	}
+	#catalogue-row{
+		width: 12%;
+	}
+	#condition-row{
+		width: 10%;
+	}
+	#age-row{
+		width: 6%;
+	}
+	#collect-descrip{
+	  /* display: block; */
+	  /* Fallback for non-webkit */
+	  display: -webkit-box;
+	  max-width: 400px;
+	  height: 100%;
+	  /* Fallback for non-webkit */
+	  line-height: 1.4;
+	  -webkit-line-clamp: 3;
+	  -webkit-box-orient: vertical;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
+	#descrip-row{
+		width: 20%;
+	}
+	tr{
+		text-overflow: ellipsis;
+		overflow: auto;
+	}
+</style>
+	
+
+
+<div class = "container-fluid" id="table-container">
     <h2>Collectibles</h2>
     <jh-alert></jh-alert>
     <div class="container">
@@ -15,27 +53,26 @@
     </div>
 
     <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table active" id="collect-table">
             <thead>
                 <tr>
                     <th><span>Name</span></th>
-                    <th><span>Description</span></th>
-                    <th><span>Age</span></th>
-                    <th><span>Catalogue Number</span></th>
+                    <th id="descrip-row"><span>Description</span></th>
+                    <th id="age-row"><span>Age</span></th>
+                    <th id="catalogue-row"><span>Catalogue Number</span></th>
                     <th><span>Category</span></th>
-                    <th><span>Condition</span></th>
+                    <th class="condition-row"><span>Condition</span></th>
                     <th><span>Color</span></th>
                     <th><span>Keyword 1</span></th>
                     <th><span>Keyword 2</span></th>
                     <th><span>Keyword 3</span></th>
-                    <th><span>For Sale?</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="collectible in collectibles track by collectible.id">
                     <td><a ui-sref="collectible.detail({id:collectible.id})">{{collectible.name}}</a></td>
-                    <td>{{collectible.description}}</td>
+                    <td id="collect-descrip-td"><div id="collect-descrip">{{collectible.description}}</div></td>
                     <td>{{collectible.age}}</td>
                     <td>{{collectible.cataloguenumber}}</td>
                     <td>
@@ -63,9 +100,6 @@
                         <span ng-repeat="keyword3 in collectible.keyword3s">
                             {{keyword3.keyword}}{{$last ? '' : ', '}}
                         <span>
-                    </td>
-                    <td>
-                        {{collectible.forsale.forsale}}
                     </td>
                     <td>
 <!--                         <button type="submit" -->
