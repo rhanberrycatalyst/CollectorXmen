@@ -7,7 +7,7 @@ angular.module('collectorthrdApp')
                 parent: 'entity',
                 url: '/collectibles',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_OWNER'],
                     pageTitle: 'Collectibles'
                 },
                 views: {
@@ -23,7 +23,7 @@ angular.module('collectorthrdApp')
                 parent: 'entity',
                 url: '/collectible/{id}',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_OWNER'],
                     pageTitle: 'Collectible'
                 },
                 views: {
