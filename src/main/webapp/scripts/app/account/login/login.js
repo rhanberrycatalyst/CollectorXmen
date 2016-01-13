@@ -16,6 +16,5 @@ angular.module('collectorthrdApp')
                         controller: 'LoginController'
                     }
                 },
-                }
-            });
+                });
     });

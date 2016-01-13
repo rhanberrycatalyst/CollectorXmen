@@ -19,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="collectible in collectibles track by collectible.id">
+                <tr ng-repeat="collectible in collectibles">
                     <td><a ui-sref="collectible.detail({id:collectible.id})">{{collectible.name}}</a></td>
                     <td>{{collectible.description}}</td>
                     <td>{{collectible.age}}</td>
@@ -50,9 +50,7 @@
                             {{keyword3.keyword}}{{$last ? '' : ', '}}
                         <span>
                     </td>
-                    <td>
-                        {{collectible.forsale.forsale}}
-                    </td>
+         
                 </tr>
             </tbody>
         </table>

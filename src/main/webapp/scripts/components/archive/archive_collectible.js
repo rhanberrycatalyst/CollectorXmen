@@ -13,7 +13,7 @@ angular.module('collectorthrdApp')
                 views: {
                     'content@': {
                         templateUrl: 'scripts/components/archive/archive_collectibles.html',
-                        controller: 'CollectibleController'
+                        controller: 'ArchiveFilter'
                     }
                 },
                 resolve: {

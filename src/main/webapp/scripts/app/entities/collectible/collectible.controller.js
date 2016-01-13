@@ -3,13 +3,19 @@
 angular.module('collectorthrdApp')
     .controller('CollectibleController', function ($scope, $state, Collectible, CollectibleSearch) {
 
-        $scope.collectibles = [];
-        $scope.loadAll = function() {
-            Collectible.query(function(result) {
-               $scope.collectibles = result;
+    	$scope.collectibles = [];
+        var indexList = [];
+        $scope.loadIndex = function() {
+            Collectible.query(function(results) {
+            angular.forEach	(results, function(result, key) {
+            	if (result.forsale.forsale == false){
+            		indexList.push(result);
+            	}
+            });
+               $scope.collectibles = indexList;
             });
         };
-        $scope.loadAll();
+        $scope.loadIndex();
 
 
         $scope.search = function () {
@@ -17,13 +23,13 @@ angular.module('collectorthrdApp')
                 $scope.collectibles = result;
             }, function(response) {
                 if(response.status === 404) {
-                    $scope.loadAll();
+                    $scope.loadIndex();
                 }
             });
         };
 
         $scope.refresh = function () {
-            $scope.loadAll();
+            $scope.loadIndex();
             $scope.clear();
         };
 

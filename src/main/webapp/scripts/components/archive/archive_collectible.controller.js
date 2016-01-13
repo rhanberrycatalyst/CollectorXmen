@@ -1,15 +1,21 @@
 'use strict';
 
 angular.module('collectorthrdApp')
-    .controller('CollectibleController', function ($scope, $state, Collectible, CollectibleSearch) {
+    .controller('ArchiveFilter', function ($scope, $state, Collectible, CollectibleSearch) {
 
         $scope.collectibles = [];
-        $scope.loadAll = function() {
-            Collectible.query(function(result) {
-               $scope.collectibles = result;
+        var archiveList = [];
+        $scope.loadArchive = function() {
+            Collectible.query(function(results) {
+            angular.forEach	(results, function(result, key) {
+            	if (result.forsale.forsale == true){
+            		archiveList.push(result);
+            	}
+            });
+               $scope.collectibles = archiveList;
             });
         };
-        $scope.loadAll();
+        $scope.loadArchive();
 
 
         $scope.search = function () {
@@ -17,13 +23,13 @@ angular.module('collectorthrdApp')
                 $scope.collectibles = result;
             }, function(response) {
                 if(response.status === 404) {
-                    $scope.loadAll();
+                    $scope.loadArchive();
                 }
             });
         };
 
         $scope.refresh = function () {
-            $scope.loadAll();
+            $scope.loadArchive();
             $scope.clear();
         };
 
