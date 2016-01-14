@@ -30,7 +30,7 @@
 	}
 	tr{
 		text-overflow: ellipsis;
-		overflow: auto;
+		overrflow: auto;
 	}
 </style>
 	
@@ -72,7 +72,7 @@
             <tbody>
                 <tr ng-repeat="collectible in collectibles track by collectible.id">
                     <td><a ui-sref="collectible.detail({id:collectible.id})">{{collectible.name}}</a></td>
-                    <td id="collect-descrip-td"><div id="collect-descrip">{{collectible.description}}</div></td>
+                    <td><div id="collect-descrip">{{collectible.description}}</div></td>
                     <td>{{collectible.age}}</td>
                     <td>{{collectible.cataloguenumber}}</td>
                     <td>
@@ -84,22 +84,22 @@
                     <td>
                         <span ng-repeat="color in collectible.colors">
                             {{color.color}}{{$last ? '' : ', '}}
-                        <span>
+                        </span>
                     </td>
                     <td>
                         <span ng-repeat="keyword1 in collectible.keyword1s">
                             {{keyword1.keyword}}{{$last ? '' : ', '}}
-                        <span>
+                        </span>
                     </td>
                     <td>
                         <span ng-repeat="keyword2 in collectible.keyword2s">
                             {{keyword2.keyword}}{{$last ? '' : ', '}}
-                        <span>
+                        </span>
                     </td>
                     <td>
                         <span ng-repeat="keyword3 in collectible.keyword3s">
                             {{keyword3.keyword}}{{$last ? '' : ', '}}
-                        <span>
+                        </span>
                     </td>
                     <td>
 <!--                         <button type="submit" -->
