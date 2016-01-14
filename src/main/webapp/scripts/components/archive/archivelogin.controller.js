@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('collectorthrdApp')
-    .controller('LoginController', function ($rootScope, $scope, $state, $timeout, Auth) {
+    .controller('ArchiveLoginController', function ($rootScope, $scope, $state, $timeout, Auth) {
         $scope.user = {};
         $scope.errors = {};
 
@@ -16,9 +16,9 @@ angular.module('collectorthrdApp')
             }).then(function () {
                 $scope.authenticationError = false;
                 if ($rootScope.previousStateName === 'register') {
-                    $state.go('home');
+                    $state.go('archive_collectible');
                 } else {
-                	$state.go('archive_collectible');
+                    $rootScope.back();
                 }
             }).catch(function () {
                 $scope.authenticationError = true;

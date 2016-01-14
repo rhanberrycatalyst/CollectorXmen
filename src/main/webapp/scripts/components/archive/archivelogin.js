@@ -13,7 +13,7 @@ angular.module('collectorthrdApp')
                 views: {
                     'content@': {
                         templateUrl: '\scripts\components\archive\archivelogin.html',
-                        controller: 'LoginController'
+                        controller: 'ArchiveLoginController'
                     }
                 },
                 });
