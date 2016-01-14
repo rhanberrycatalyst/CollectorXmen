@@ -29,6 +29,14 @@ angular.module('collectorthrdApp')
                 $rootScope.previousStateName = undefined;
                 $rootScope.previousStateNameParams = undefined;
             },
+            
+            logarchive: function () {
+                AuthServerProvider.logout();
+                Principal.authenticate(null);
+                
+                $rootScope.previousStateName = $rootScope.toState;
+                $rootScope.previousStateNameParams = $rootScope.toStateParams;
+            },
 
             authorize: function(force) {
                 return Principal.identity(force)
