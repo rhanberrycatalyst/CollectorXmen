@@ -2,7 +2,7 @@
 
 angular.module('collectorthrdApp')
     .controller('LoginController', function ($rootScope, $scope, $state, $timeout, Auth) {
-        Auth.logout();
+        
     	
     	$scope.user = {};
         $scope.errors = {};
