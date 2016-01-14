@@ -4,7 +4,8 @@ angular.module('collectorthrdApp')
     .config(function ($stateProvider) {
         $stateProvider
             .state('archive_collectible', {
-                parent: 'entity',
+                
+            	parent: 'entity',
                 url: '/collectibles',
                 data: {
                     authorities: ['ROLE_USER'],
