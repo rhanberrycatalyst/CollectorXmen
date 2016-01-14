@@ -43,7 +43,7 @@ angular.module('collectorthrdApp')
                         if ($rootScope.toState.data.authorities && $rootScope.toState.data.authorities.length > 0 && !Principal.hasAnyAuthority($rootScope.toState.data.authorities)) {
                             if (isAuthenticated) {
                                 // user is signed in but not authorized for desired state
-                                $state.go('accessdenied');
+                                $state.go('login');
                             }
                             else {
                                 // user is not authenticated. stow the state they wanted before you
