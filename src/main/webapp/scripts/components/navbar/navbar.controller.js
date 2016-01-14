@@ -13,7 +13,7 @@ angular.module('collectorthrdApp')
         
         $scope.logarchive = function () {
         	        	
-        	Auth.logarchive();
-        	$state.go('archive_collectible')
+        	Auth.logout();
+        	$state.go('archivelogin')
         }
     });
