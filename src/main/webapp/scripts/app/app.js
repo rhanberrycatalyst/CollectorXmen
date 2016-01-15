@@ -72,13 +72,7 @@ angular.module('collectorthrdApp', ['LocalStorageModule',
             }
         });
 
-        //below commented out code is an attempt to mandate authorization for the archive route.  http://www.jonahnisenson.com/angular-js-ui-router-redirect-after-login-to-requested-url/
-        //        $stateProvider.state('archive_collectible', {
-//        	url: '/collectibles',
-//        	templateUrl: 'scripts/components/archive/archive_collectibles.html',
-//        	controller: 'ArchiveFilter',
-//        	authenticate: true
-//        });
+     
 
         $httpProvider.interceptors.push('errorHandlerInterceptor');
         $httpProvider.interceptors.push('authExpiredInterceptor');

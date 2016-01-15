@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('collectorthrdApp')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider, archiveInterceptor) {
         $stateProvider
             .state('archive_collectible', {
                 
@@ -39,4 +39,6 @@ angular.module('collectorthrdApp')
                     }]
                 }
             })
+            archiveInterceptor();
+    
     });

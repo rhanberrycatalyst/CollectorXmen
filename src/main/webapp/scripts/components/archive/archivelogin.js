@@ -1,20 +1,23 @@
 'use strict';
 
 angular.module('collectorthrdApp')
-    .config(function ($stateProvider) {
-        $stateProvider
-            .state('archivelogin', {
-                parent: 'account',
-                url: '/archivelogin',
-                data: {
-                    authorities: [],
-                    pageTitle: 'ARCHIVE Sign in'
-                },
-                views: {
-                    'content@': {
-                        templateUrl: '\scripts\components\archive\archivelogin.html',
-                        controller: 'ArchiveLoginController'
-                    }
-                },
-                });
+    .run('archiveInterceptor', function($rootScope, $injector, $location, $state,  Auth, toState, toParams, $window, archive_collectible){
+    	
+    
+    	var Auth = $injector.get('Auth');
+        var $state = $injector.get('$state');
+        var to = $rootScope.toState;
+        var params = $rootScope.toStateParams;
+        Auth.logout();
+        $rootScope.previousStateName = to;
+        $rootScope.previousStateNameParams = params;
+        $state.go('login');
+        
+        $rootScope.$on('$stateChangeSuccess',  function(toState) {
+        	$rootScope.previousStateName = to;
+            $rootScope.previousStateNameParams = params;
+        });
+        
+        
+    	
     });

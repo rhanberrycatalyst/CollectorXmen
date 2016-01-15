@@ -11,9 +11,5 @@ angular.module('collectorthrdApp')
             $state.go('home');
         };
         
-        $scope.logarchive = function () {
-        	        	
-        	Auth.logout();
-        	$state.go('archivelogin')
-        }
+        
     });
