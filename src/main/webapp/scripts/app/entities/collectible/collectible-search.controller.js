@@ -44,20 +44,20 @@ angular.module('collectorthrdApp').controller('CollectibleSearchController',
         	}
         	var colorInput = $('#field_color').val();
         	if (colorInput !== null) {
-        		fields.push(["color",colorInput]);
+        		fields.push(["colors",colorInput]);
         	}
         	var keyword1Input = $('#field_keyword1').val();
         	if (keyword1Input !== null) {
         		
-        		fields.push(["keyword1",keyword1Input]);
+        		fields.push(["keyword1s",keyword1Input]);
         	}
         	var keyword2Input = $('#field_keyword2').val();
         	if (keyword2Input !== null) {
-        		fields.push(["keyword2",keyword2Input]);
+        		fields.push(["keyword2s",keyword2Input]);
         	}
         	var keyword3Input = $('#field_keyword3').val();
         	if (keyword3Input !== null) {
-        		fields.push(["keyword3", keyword3Input]);
+        		fields.push(["keyword3s", keyword3Input]);
         	}
         	if(fields.length == 0){
         		alert("No search criteria entered");

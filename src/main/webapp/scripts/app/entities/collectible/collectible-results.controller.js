@@ -16,53 +16,63 @@ angular.module('collectorthrdApp').controller('CollectibleResultsController',
             		indexList.push(result);
             	}
             });
-            
-            /*
-             	var name = index.name;
-             	var description = index.description;
-             	var category = index.category.id;
-             	var catalog = index.cataloguenumber;
-             	var condition = index.condition.id;
-             	var color = index.colors[0].id;
-             	var age = index.age;
-             	var keyword1 = index.keyword1s[0].id;
-             	var keyword2 = index.keyword2s[0].id;
-             	var keyword3 = index.keyword3s[0].id;
-             	 
-             */
+
             for (var i = 0; i<fieldsList.length; i++){
             	var key = fieldsList[i][0];
             	var field = fieldsList[i][1];
-            	
-            	for (var j = 0; j<indexList.length; j++){
-            		console.log(indexList[j].name);
-            		if (indexList[j].name !== field){
-            			var check = indexList.indexOf(j)
-                		indexList.splice(j,j+1);
-                	}	
-            	}
-                 	 /*else if (index.description == field){
-                		resultsList.push(index);
-                	}else if (index.category.id == field){
-                		resultsList.push(index);
-                	}else if (index.cataloguenumber == field){
-                		resultsList.push(index);
-                	}else if (index.condition.id == field){
-                		resultsList.push(index);
-                	}else if (index.age == field){
-                		resultsList.push(index);
-                	}else if (index.colors[0].id == field){
-                		resultsList.push(index);
-                	}else if (index.keyword1s[0].id == field){
-                		resultsList.push(index);
-                	}else if (index.keyword2s[0].id == field){
-                		resultsList.push(index);
-                	}else if (index.keyword3s[0].id == field){
-                		resultsList.push(index);
+            	angular.forEach	(indexList, function(index, testkey) {
+                 	if(Object.keys(index)[1] == key) {
+                 		if (index.name !== field){
+                 			resultsList.push(index);
+                     	}
+                	} else if (Object.keys(index)[2] == key){
+                		if (index.description !== field){
+                    		resultsList.push(index);
+                    	}
+                	}else if (Object.keys(index)[5] == key) {
+                		if (index.category.id != field){
+                    		resultsList.push(index);
+                    	}
+                	}else if (Object.keys(index)[4] == key) {
+                		if (index.cataloguenumber !== field){
+                				resultsList.push(index);
+                		}
+                	} else if (Object.keys(index)[6] == key) {
+                		if (index.condition.id != field){
+                    		resultsList.push(index);
+                    	}
+                	} else if (Object.keys(index)[3] == key){
+                		if (index.age != field) {
+                			resultsList.push(index);
+                		}
+                	} else if (Object.keys(index)[7] == key){
+                		console.log("reached");
+                		if(index.colors[0].id != field){
+                    		resultsList.push(index);
+                    	}
+                	}else if (Object.keys(index)[8] == key) {
+                		if(index.keyword1s[0].id != field){
+                    		resultsList.push(index);
+                    	}
+                  	}else if (Object.keys(index)[9] == key) {
+                  		if (index.keyword2s[0].id != field){
+                    		resultsList.push(index);
+                  		}
+                	}else if (Object.keys(index)[10] == key) {
+                		if (index.keyword3s[0].id != field){
+                    		resultsList.push(index);
+                    	}
                 	}
-                });		*/
+                });		
              }
-               $scope.collectibles = indexList;
+            indexList = indexList.filter(function(val) {
+            	  return resultsList.indexOf(val) == -1;
+            });
+            if (indexList.length == 0 ){
+            	$("#modalResults").empty();
+            	$("#modalResults").append("<p>No search results found. </p>");
+            }
+             $scope.collectibles = indexList;
             });
         };
         $scope.loadIndex();
