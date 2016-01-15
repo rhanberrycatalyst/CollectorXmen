@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('collectorthrdApp')
-    .run('archiveInterceptor', function($rootScope, $injector, $location, $state,  Auth, toState, toParams, $window, archive_collectible){
+    .run(function($rootScope, $injector, $location, $state,  Auth, toState, toParams, $window, archive_collectible){
     	
     
     	var Auth = $injector.get('Auth');
