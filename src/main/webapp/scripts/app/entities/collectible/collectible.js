@@ -86,7 +86,36 @@ angular.module('collectorthrdApp')
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({
                         templateUrl: 'scripts/app/entities/collectible/collectible-search.html',
-                        controller: 'CollectibleDialogController',
+                        controller: 'CollectibleSearchController',
+                        size: 'lg',
+                        resolve: {
+                            entity: function () {
+                                return {
+                                    name: null,
+                                    description: null,
+                                    age: null,
+                                    cataloguenumber: null,
+                                    id: null
+                                };
+                            }
+                        }
+                    }).result.then(function(result) {
+                        $state.go('collectible', null, { reload: true });
+                    }, function() {
+                        $state.go('collectible');
+                    })
+                }]
+            })
+            .state('collectible.results', {
+                parent: 'collectible',
+                url: '/results',
+                data: {
+                    authorities: ['ROLE_USER']
+                },
+                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                    $uibModal.open({
+                        templateUrl: 'scripts/app/entities/collectible/collectible-search-results.html',
+                        controller: 'CollectibleResultsController',
                         size: 'lg',
                         resolve: {
                             entity: function () {

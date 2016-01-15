@@ -12,68 +12,62 @@
         <div class="form-group">
             <label class="control-label" for="field_name">Name</label>
             <input type="text" class="form-control" name="name" id="field_name"
-                    ng-model="collectible.name"
+                    ng-model="searchName"
             />
         </div>
         <div class="form-group">
             <label class="control-label" for="field_description">Description</label>
             <input type="text" class="form-control" name="description" id="field_description"
-                    ng-model="collectible.description"
+                    ng-model="searchDescription"
             />
         </div>
         <div class="form-group">
             <label class="control-label" for="field_age">Age</label>
             <input type="number" class="form-control" name="age" id="field_age"
-                    ng-model="collectible.age"
+                    ng-model="searchAge"
              />
         </div>
         <div class="form-group">
             <label class="control-label" for="field_cataloguenumber">Catalogue Number</label>
             <input type="text" class="form-control" name="cataloguenumber" id="field_cataloguenumber"
-                    ng-model="collectible.cataloguenumber"
-                    required ng-maxlength="16" ng-pattern="/[A-Z]{3}-[0-9]{12}$/" />
+                    ng-model="searchCataloguenumber"
+  			/>
         </div>
         <div class="form-group">
             <label for="field_category">Category</label>
-            <select class="form-control" id="field_category" name="category" ng-model="collectible.category" ng-options="category as category.category for category in categorys track by category.id">
+            <select class="form-control" id="field_category" name="category" ng-model="searchCategory" ng-options="category as category.category for category in categorys track by category.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label for="field_condition">Condition</label>
-            <select class="form-control" id="field_condition" name="condition" ng-model="collectible.condition" ng-options="condition as condition.condition for condition in conditions track by condition.id">
+            <select class="form-control" id="field_condition" name="condition" ng-model="SearchCondition" ng-options="condition as condition.condition for condition in conditions track by condition.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group">
             <label for="field_color">Color</label>
-            <select class="form-control" id="field_color" multiple name="color" ng-model="collectible.colors" ng-options="color as color.color for color in colors track by color.id"></select>
+            <select class="form-control" id="field_color" multiple name="color" ng-model="searchColors" ng-options="color as color.color for color in colors track by color.id"></select>
         </div>
         <div class="form-group">
             <label for="field_keyword1">Keyword 1</label>
-            <select class="form-control" id="field_keyword1" multiple name="keyword1" ng-model="collectible.keyword1s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
+            <select class="form-control" id="field_keyword1" multiple name="keyword1" ng-model="SearchKeyword1s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
         </div>
         <div class="form-group">
             <label for="field_keyword2">Keyword 2</label>
-            <select class="form-control" id="field_keyword2" multiple name="keyword2" ng-model="collectible.keyword2s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
+            <select class="form-control" id="field_keyword2" multiple name="keyword2" ng-model="SearchKeyword2s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
         </div>
         <div class="form-group">
             <label for="field_keyword3">Keyword 3</label>
-            <select class="form-control" id="field_keyword3" multiple name="keyword3" ng-model="collectible.keyword3s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
-        </div>
-        <div class="form-group">
-            <label for="field_forsale">For Sale?</label>
-            <select class="form-control" id="field_forsale" name="forsale" ng-model="collectible.forsale" ng-options="forsale as forsale.forsale for forsale in forsales track by forsale.id">
-                <option value=""></option>
-            </select>
+            <select class="form-control" id="field_keyword3" multiple name="keyword3" ng-model="SearchKeyword3s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
         </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
             <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Search</span>
+        <button type="submit" ng-click="save()" ui-sref="collectible.results" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span>&nbsp;<span>Search</span>
         </button>
     </div>
 </form>

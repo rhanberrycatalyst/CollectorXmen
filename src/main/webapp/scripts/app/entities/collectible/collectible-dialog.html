@@ -124,7 +124,7 @@
             <select class="form-control" id="field_keyword3" multiple name="keyword3" ng-model="collectible.keyword3s" ng-options="keyword as keyword.keyword for keyword in keywords track by keyword.id"></select>
         </div>
         <div class="form-group">
-            <label for="field_forsale">For Sale?</label>
+            <label for="field_forsale">Archive?</label>
             <select class="form-control" id="field_forsale" name="forsale" ng-model="collectible.forsale" ng-options="forsale as forsale.forsale for forsale in forsales track by forsale.id">
                 <option value=""></option>
             </select>
@@ -135,7 +135,7 @@
             <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
         </button>
         <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+            <span class="glyphicon glyphicon-search"></span>&nbsp;<span>Save</span>
         </button>
     </div>
 </form>
